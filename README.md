@@ -16,7 +16,7 @@ Or, to install a specific commit or tag:
 python -m pip install git+https://github.com/lemonyte/_@{commit-or-tag}
 ```
 
-- [Python 3.8](https://www.python.org/downloads/) or higher
+[Python 3.8](https://www.python.org/downloads/) or a newer version is required.
 
 ## Usage
 
@@ -47,7 +47,7 @@ If you get `SyntaxError: encoding problem: _`, follow the steps below to make su
 
 > Note: if using PowerShell, use `$SITE_PACKAGES` instead of `SITE_PACKAGES` to assign the variable.
 
-This issue is common when installing `_` into the user site-packages.
+This issue is commonly encountered when installing `_` into the user site-packages.
 
 ## Credits
 
