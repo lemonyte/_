@@ -4,16 +4,8 @@
 
 ## Installation
 
-To install the latest in-development version:
-
 ```shell
-python -m pip install git+https://github.com/lemonyte/_
-```
-
-Or, to install a specific commit or tag:
-
-```shell
-python -m pip install git+https://github.com/lemonyte/_@{commit-or-tag}
+python -m pip install underscores
 ```
 
 [Python 3.8](https://www.python.org/downloads/) or a newer version is required.
