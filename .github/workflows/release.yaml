@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    tags: 
+      - v*
+
+jobs:
+  release:
+    name: Release and publish package
+    runs-on: ubuntu-latest
+    environment: Release
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Build source distribution
+        run: pipx run build --sdist
+
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./dist/*
