@@ -37,7 +37,7 @@ jobs:
         run: |
           source .venv/bin/activate
           pip install dist/*.tar.gz
-  
+
       - name: Install pytest
         run: |
           source .venv/bin/activate
