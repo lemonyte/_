@@ -7,6 +7,10 @@ from encodings import utf_8
 from io import StringIO
 from pathlib import Path
 from tokenize import NAME, NL, generate_tokens
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from _typeshed import ReadableBuffer
 
 __all__ = [
     "_",
@@ -74,7 +78,7 @@ def decode(input: bytes, errors: str = "strict") -> tuple[str, int]:
 
 
 class IncrementalDecoder(utf_8.IncrementalDecoder):
-    def decode(self, input: bytes, final: bool = False) -> str:  # noqa: FBT001 FBT002
+    def decode(self, input: ReadableBuffer, final: bool = False) -> str:  # noqa: FBT001 FBT002
         self.buffer += input
         if final:
             decoded, _ = decode(self.buffer)
