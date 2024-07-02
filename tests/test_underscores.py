@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import shutil
 import subprocess
 import sys
+import sysconfig
 from pathlib import Path
-from typing import NamedTuple
+from typing import Generator, NamedTuple
 
 import pytest
 
@@ -20,6 +22,19 @@ TEST_DATA = tuple(
 )
 
 
+@pytest.fixture()
+def _install_pth_file() -> Generator[None, None, None]:
+    """Install the `_.pth` file in the site-packages directory to make the execute tests work."""
+    src_pth_file = Path(__file__).parent.parent / "underscores" / "_.pth"
+    site_packages = sysconfig.get_path("purelib")
+    shutil.copy(src_pth_file, Path(sys.prefix) / site_packages)
+    installed_pth_file = Path(sys.prefix) / site_packages / "_.pth"
+    assert installed_pth_file.exists()
+    yield
+    installed_pth_file.unlink()
+
+
+@pytest.mark.usefixtures("_install_pth_file")
 @pytest.mark.parametrize(("file_pair"), TEST_DATA_FILE_PATHS)
 def test_execute(file_pair: tuple[str, str]) -> None:
     processes = tuple(
