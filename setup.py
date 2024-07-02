@@ -6,4 +6,4 @@ from setuptools import setup
 
 SITE_PACKAGES = sysconfig.get_path("purelib").split(sys.prefix + os.sep)[1]
 
-setup(data_files=[(SITE_PACKAGES, ["underscores/_.pth"])])
+setup(data_files=[(SITE_PACKAGES, ["src/underscores/_.pth"])])

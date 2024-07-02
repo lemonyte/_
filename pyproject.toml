@@ -23,9 +23,6 @@ classifiers = [
 [project.urls]
 Repository = "https://github.com/lemonyte/_"
 
-[tool.setuptools]
-packages = ["underscores"]
-
 [tool.setuptools.dynamic]
 version = { attr = "underscores.__version__" }
 

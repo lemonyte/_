@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, NamedTuple
 
 import pytest
+
 import underscores
 
 if TYPE_CHECKING:
