@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Generator, NamedTuple
 
 import pytest
+import underscores
 
 
 class CodePair(NamedTuple):
@@ -57,3 +58,8 @@ def test_encode(code_pair: CodePair) -> None:
 @pytest.mark.parametrize(("code_pair"), TEST_DATA)
 def test_decode(code_pair: CodePair) -> None:
     assert code_pair.encoded.encode("utf-8").decode("_").lstrip("\n") == code_pair.decoded
+
+
+@pytest.mark.parametrize(("code_pair"), TEST_DATA)
+def test_underscores_function(code_pair: CodePair) -> None:
+    assert underscores._(code_pair.decoded) == code_pair.encoded
