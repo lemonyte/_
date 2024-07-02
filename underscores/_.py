@@ -11,9 +11,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from _typeshed import ReadableBuffer
 
-__all__ = [
-    "_",
-]
+__all__ = ("_",)
 
 NUM_WIDTH = 4
 MAX_LINE_LENGTH = 80
