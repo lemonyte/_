@@ -5,10 +5,13 @@ import subprocess
 import sys
 import sysconfig
 from pathlib import Path
-from typing import Generator, NamedTuple
+from typing import TYPE_CHECKING, NamedTuple
 
 import pytest
 import underscores
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
 
 
 class CodePair(NamedTuple):
