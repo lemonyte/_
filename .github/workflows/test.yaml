@@ -30,6 +30,11 @@ jobs:
         run: |
           python -m venv .venv
 
+      - name: Install development dependencies
+        run: |
+          source .venv/bin/activate
+          pip install -r requirements-dev.txt
+
       - name: Download sdist artifact
         uses: actions/download-artifact@v4
         with:
@@ -40,11 +45,6 @@ jobs:
         run: |
           source .venv/bin/activate
           pip install dist/*.tar.gz
-
-      - name: Install development dependencies
-        run: |
-          source .venv/bin/activate
-          pip install -r requirements-dev.txt
 
       - name: Run pytest
         run: |

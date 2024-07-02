@@ -18,7 +18,14 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Create virtual environment
+        run: |
+          python -m venv .venv
+
+      - name: Install development dependencies
+        run: |
+          source .venv/bin/activate
+          pip install -r requirements-dev.txt
+
       - name: Run pre-commit hooks
         uses: pre-commit/action@v3.0.1
-        env:
-          SKIP: pytest
