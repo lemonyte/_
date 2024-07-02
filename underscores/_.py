@@ -1,4 +1,3 @@
-# ruff: noqa: ANN101
 from __future__ import annotations
 
 import itertools
