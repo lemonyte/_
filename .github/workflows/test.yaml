@@ -18,12 +18,6 @@ jobs:
           - "3.11"
           - "3.12"
     steps:
-      - name: Download sdist artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: sdist
-          path: ./dist
-
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
@@ -35,6 +29,12 @@ jobs:
       - name: Create virtual environment
         run: |
           python -m venv .venv
+
+      - name: Download sdist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: sdist
+          path: ./dist
 
       - name: Install package
         run: |
