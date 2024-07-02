@@ -17,9 +17,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Download artifacts
+      - name: Download sdist artifact
         uses: actions/download-artifact@v4
         with:
+          name: sdist
           path: ./dist
 
       - name: Create release
@@ -35,9 +36,10 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - name: Download artifacts
+      - name: Download sdist artifact
         uses: actions/download-artifact@v4
         with:
+          name: sdist
           path: ./dist
 
       - name: Upload distributions to PyPI
