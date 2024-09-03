@@ -36,7 +36,7 @@ TEST_FILES = (
 TEST_CODE = tuple(CodePair(*(file.read_text(encoding="utf-8") for file in file_pair)) for file_pair in TEST_FILES)
 
 
-@pytest.fixture()
+@pytest.fixture
 def _install_pth_file() -> Generator[None, None, None]:
     """Install the `_.pth` file in the site-packages directory to make the execute tests work."""
     src_pth_file = SRC_DIR / "underscores" / "_.pth"
