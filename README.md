@@ -4,6 +4,9 @@
 
 ## Installation
 
+> [!TIP]
+> It is highly recommended to use a virtual environment for proper installation of the `_.pth` file.
+
 ```shell
 python -m pip install underscores
 ```
@@ -37,7 +40,8 @@ If you get `SyntaxError: encoding problem: _`, follow the steps below to make su
 1. Run `SITE_PACKAGES=$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')` to get the path to the Python site-packages directory.
 2. Run `echo "import underscores" > "$SITE_PACKAGES/_.pth"` to register the `_` encoding on startup.
 
-> Note: if using PowerShell, use `$SITE_PACKAGES` instead of `SITE_PACKAGES` to assign the variable.
+> [!NOTE]
+> If using PowerShell, use `$SITE_PACKAGES` instead of `SITE_PACKAGES` to assign the variable.
 
 This issue is commonly encountered when installing `_` into the user site-packages.
 
@@ -46,7 +50,7 @@ This issue is commonly encountered when installing `_` into the user site-packag
 `_` is a port of [`_`](https://github.com/mame/_) from Ruby to Python.
 Please check out the original creator [mame](https://github.com/mame).
 
-Big thanks to [shailist](https://github.com/shailist) for [this](https://shailist.github.io/posts/python-source-preprocessor-custom-encoding/) awesome post on custom encodings.
+Big thanks to [shailist](https://github.com/shailist) for [this](https://shailist.github.io/posts/python-source-preprocessor-custom-encoding/) awesome post about custom encodings.
 
 ## License
 
