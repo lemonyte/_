@@ -1,7 +1,8 @@
 """
 `_` allows you to write Python code using only `_`.
 
-You shouldn't need to import this module unless the .pth file fails to install.
+Importing this module will register the `_` encoding with the Python interpreter,
+which should be done automatically by the `_.pth` file in the `site-packages` directory.
 See the [README](https://github.com/lemonyte/_) for more information.
 
 ## Usage
