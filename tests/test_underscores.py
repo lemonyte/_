@@ -37,7 +37,7 @@ TEST_CODE = tuple(CodePair(*(file.read_text(encoding="utf-8") for file in file_p
 
 
 @pytest.fixture
-def _install_pth_file() -> Generator[None, None, None]:
+def install_pth_file() -> Generator[None, None, None]:
     """Install the `_.pth` file in the site-packages directory to make the execute tests work."""
     src_pth_file = SRC_DIR / "underscores" / "_.pth"
     site_packages = sysconfig.get_path("purelib")
@@ -48,7 +48,7 @@ def _install_pth_file() -> Generator[None, None, None]:
     installed_pth_file.unlink()
 
 
-@pytest.mark.usefixtures("_install_pth_file")
+@pytest.mark.usefixtures("install_pth_file")
 @pytest.mark.parametrize(("file_pair"), TEST_FILES)
 def test_execute(file_pair: FilePair) -> None:
     args = (sys.executable, "-X", "utf8")
