@@ -55,7 +55,7 @@ def encode(input: str, errors: str = "strict", /) -> tuple[bytes, int]:
     return utf_8.encode(_(input), errors)
 
 
-def decode(input: bytes, errors: str = "strict") -> tuple[str, int]:
+def decode(input: ReadableBuffer, errors: str = "strict") -> tuple[str, int]:
     decoded, size = utf_8.decode(input, errors)
     chars = []
     underscores = []
