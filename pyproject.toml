@@ -30,6 +30,9 @@ dev = [
     "setuptools>=61",
 ]
 
+[tool.setuptools]
+package-data = { underscores = ["py.typed"] }
+
 [tool.setuptools.dynamic]
 version = { attr = "underscores.__version__" }
 
