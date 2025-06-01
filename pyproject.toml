@@ -7,14 +7,14 @@ name = "underscores"
 dynamic = ["version"]
 description = "_ allows you to write Python code using only _."
 readme = "README.md"
-license = { file = "LICENSE.txt" }
+license = "MIT"
+license-files = ["LICENSE.txt"]
 requires-python = ">=3.9"
 authors = [{ name = "Lemonyte" }]
 keywords = ["_", "underscore", "encoding", "joke"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Topic :: Utilities",
