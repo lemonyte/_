@@ -34,7 +34,7 @@ jobs:
         run: uv sync --locked --all-extras --group dev
 
       - name: Download sdist artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: sdist
           path: ./dist
