@@ -31,6 +31,14 @@ You can generate a script with `_`:
 print('print("Hello, world!")'.encode("_").decode("utf-8"))
 ```
 
+A `_` command is also provided:
+
+```shell
+_ script1.py > script2.py
+# or
+echo 'print("Hello, world!")' | _ > script.py
+```
+
 ## Troubleshooting
 
 If you get `SyntaxError: invalid syntax`, make sure the line `# coding: _` is present at the top of your script.

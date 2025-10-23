@@ -23,6 +23,9 @@ classifiers = [
 [project.urls]
 Repository = "https://github.com/lemonyte/_"
 
+[project.scripts]
+_ = "underscores.__main__:cmd"
+
 [dependency-groups]
 dev = [
     "pre-commit~=4.3.0",
