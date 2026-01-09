@@ -25,7 +25,8 @@ class FilePair(NamedTuple):
     encoded: Path
 
 
-SRC_DIR = Path(__file__).parent.parent / "src"
+ROOT_DIR = Path(__file__).parent.parent
+SRC_DIR = ROOT_DIR / "src"
 TEST_CODE_DIR = Path(__file__).parent / "code"
 TEST_FILES = (
     FilePair(
@@ -39,9 +40,9 @@ TEST_CODE = tuple(CodePair(*(file.read_text(encoding="utf-8") for file in file_p
 @pytest.fixture
 def install_pth_file() -> Generator[None, None, None]:
     """Install the `_.pth` file in the site-packages directory to make the execute tests work."""
-    src_pth_file = SRC_DIR / "underscores" / "_.pth"
+    pth_file = ROOT_DIR / "purelib" / "_.pth"
     site_packages = sysconfig.get_path("purelib")
-    shutil.copy(src_pth_file, Path(sys.prefix) / site_packages)
+    shutil.copy(pth_file, Path(sys.prefix) / site_packages)
     installed_pth_file = Path(sys.prefix) / site_packages / "_.pth"
     assert installed_pth_file.exists()
     yield

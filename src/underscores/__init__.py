@@ -24,8 +24,9 @@ print('print("Hello, world!")'.encode("_").decode("utf-8"))
 ```
 """
 
+from importlib.metadata import version
+
 from underscores._ import _
 
-__name__ = "_"
-__version__ = "0.0.3"
+__version__ = version("underscores")
 __all__ = ("_",)
