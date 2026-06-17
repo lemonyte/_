@@ -42,7 +42,6 @@ data = { purelib = "purelib" }
 src = ["src"]
 exclude = ["tests/code/**"]
 line-length = 119
-target-version = "py39"
 
 [tool.ruff.lint]
 select = ["ALL"]
