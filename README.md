@@ -11,7 +11,7 @@
 python -m pip install underscores
 ```
 
-[Python 3.9](https://www.python.org/downloads/) or a newer version is required.
+[Python 3.10](https://www.python.org/downloads/) or a newer version is required.
 
 ## Usage
 
