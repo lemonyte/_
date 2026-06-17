@@ -27,7 +27,7 @@ _ = "underscores.__main__:cmd"
 dev = [
     "prek~=0.2.27",
     "pytest-cov~=7.0.0",
-    "pytest~=8.4.2",
+    "pytest>=8.4.2,<9.1.0",
     "ty~=0.0.2",
 ]
 
